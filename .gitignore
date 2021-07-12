@@ -1,0 +1,6 @@
+/tools/**/vendor
+.env
+
+### Composer ###
+vendor/
+autotune.json

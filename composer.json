@@ -1,0 +1,36 @@
+{
+    "name": "linkorb/php-tools",
+    "description": "PHP Tools: collection of isolated tools for qa, test, etc",
+    "homepage": "http://www.github.com/linkorb/php-tools",
+    "keywords": ["php", "tools", "linkorb"],
+    "type": "library",
+    "authors": [
+        {
+            "name": "LinkORB Engineering",
+            "email": "engineering@linkorb.com",
+            "role": "Development"
+        }
+    ],
+    "require": {
+        "php": ">=7.2.0",
+        "bamarni/composer-bin-plugin": "^1.4"
+    },
+    "license": "MIT",
+    "scripts": {
+        "bin": "echo 'composer-bin-plugin not yet installed'",
+        "post-install-cmd": [
+            "@composer bin all install --ansi"
+        ],
+        "post-update-cmd": ["@composer bin all update --ansi"],
+        "clean": "rm -rf tools/*/vendor && rm -rf vendor"
+    },
+    "config": {
+        "bin-dir": "bin"
+    },
+    "extra": {
+        "bamarni-bin": {
+            "target-directory": "tools",
+            "bin-links": false
+        }
+    }
+}

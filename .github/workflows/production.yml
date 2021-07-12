@@ -1,0 +1,30 @@
+name: Build container for production
+
+on:
+  push:
+    branches:
+    - master
+  schedule:
+  - cron: 0 9 * * 1
+
+jobs:
+  build:
+    env:
+      SHA8: $(echo ${GITHUB_SHA} | cut -c1-8)
+      REPO_NAME: php-tools
+      DOCKER_TAG: docker.pkg.github.com/${{ github.repository }}/
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Docker login
+      run: echo ${{ secrets.DOCKER_PASSWORD }} | docker login docker.pkg.github.com --username automation@linkorb.com --password-stdin
+    - name: Build the Docker image
+      run: docker build . --build-arg PACKAGIST_USER="token" --build-arg PACKAGIST_TOKEN="${{secrets.PACKAGIST_TOKEN}}" --tag ${DOCKER_TAG}${REPO_NAME}:latest --file Dockerfile
+    - name: Docker push with latest tag
+      run: docker push ${DOCKER_TAG}${REPO_NAME}:latest
+    - name: Docker retag new image with commit hash
+      run: docker image tag ${DOCKER_TAG}${REPO_NAME}:latest ${DOCKER_TAG}${REPO_NAME}:$(echo ${GITHUB_SHA} | cut -c1-8)
+    - name: Docker push with commit hash tag
+      run: docker push ${DOCKER_TAG}${REPO_NAME}:$(echo ${GITHUB_SHA} | cut -c1-8)

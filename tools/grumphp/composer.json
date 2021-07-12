@@ -1,0 +1,5 @@
+{
+    "require": {
+        "phpro/grumphp": "^1.3"
+    }
+}

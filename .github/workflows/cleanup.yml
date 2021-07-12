@@ -1,0 +1,22 @@
+name: CleanupOldPackages
+
+on:
+  schedule:
+  - cron: 0 13 * * 2
+  workflow_dispatch:
+
+jobs:
+  cleanup:
+    runs-on: ubuntu-latest
+    steps:
+
+    - name: GitHub Environment Variables Action
+      uses: FranzDiebold/github-env-vars-action@v2
+
+    - name: Delete Package Versions Keep Latest
+      uses: windyakin/delete-package-versions-keep-latest@1.0.0
+      with:
+        owner: linkorb
+        repo: "${{ env.CI_REPOSITORY_NAME }}"
+        package-name: "${{ env.CI_REPOSITORY_NAME }}"
+        keep-latest-package-versions: 5

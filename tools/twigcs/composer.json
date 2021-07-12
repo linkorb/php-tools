@@ -1,0 +1,5 @@
+{
+    "require": {
+        "friendsoftwig/twigcs": "^5.0"
+    }
+}
