@@ -1,5 +1,10 @@
 {
     "require": {
         "ergebnis/composer-normalize": "^2.15"
+    },
+    "config": {
+        "allow-plugins": {
+            "ergebnis/composer-normalize": false
+        }
     }
 }
