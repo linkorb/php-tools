@@ -2,7 +2,11 @@
     "name": "linkorb/php-tools",
     "description": "PHP Tools: collection of isolated tools for qa, test, etc",
     "homepage": "http://www.github.com/linkorb/php-tools",
-    "keywords": ["php", "tools", "linkorb"],
+    "keywords": [
+        "php",
+        "tools",
+        "linkorb"
+    ],
     "type": "library",
     "authors": [
         {
@@ -21,11 +25,16 @@
         "post-install-cmd": [
             "@composer bin all install --ansi"
         ],
-        "post-update-cmd": ["@composer bin all update --ansi"],
+        "post-update-cmd": [
+            "@composer bin all update --ansi"
+        ],
         "clean": "rm -rf tools/*/vendor && rm -rf vendor"
     },
     "config": {
-        "bin-dir": "bin"
+        "bin-dir": "bin",
+        "allow-plugins": {
+            "bamarni/composer-bin-plugin": true
+        }
     },
     "extra": {
         "bamarni-bin": {

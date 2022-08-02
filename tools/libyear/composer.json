@@ -1,0 +1,5 @@
+{
+    "require": {
+        "ecoapm/libyear": "^2.0"
+    }
+}
