@@ -9,6 +9,8 @@ PHP developers are agreeing that PHP tools should not be like regular composer d
 * https://twitter.com/s_bergmann/status/999635212723212288
 * https://github.com/composer/composer/issues/5390
 * https://github.com/composer/composer/issues/9636
+* https://docs.phpdoc.org/2.9/getting-started/installing.html#using-composer ("we are unable to provide support on issues stemming from dependency conflicts")
+* https://www.phpdoc.org/ (see "But wait? What about Composer?")
 
 A primary reason for this is that adding many tools to require-dev significantly increases the complexity of the dependencies and constraints of your project. This can quickly lead to conflicts that are hard or impossible to solve. By installing these tools "globally", your project's dependencies will remain simple.
 
