@@ -38,7 +38,7 @@ If you're using [linuxserver's code-server](https://hub.docker.com/r/linuxserver
 
 ### Uncaught Error: Undefined constant Bamarni\Composer\Bin\Command\BinCommand::SUCCESS
 
-This can occur if `composer-bin-plugin` is unable to resolve the path to binaries saved in the `php-tools/bin` folder. Adding `path/to/php-tools/` to your PATH environment variable before running `composer install` may fix this bug.
+This can occur if `composer-bin-plugin` is unable to resolve the path to binaries saved in the `php-tools/bin` folder. Adding `path/to/php-tools/bin` to your PATH environment variable before running `composer install` may fix this bug.
 
 ## Alternatives
 
