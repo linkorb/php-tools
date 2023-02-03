@@ -34,6 +34,12 @@ To make this change permanent, add the previous line to your `~/.bashrc`, `~/.pr
 
 If you're using [linuxserver's code-server](https://hub.docker.com/r/linuxserver/code-server), you can pass a PATH variable as part of your docker-compose.yml file.
 
+## Troubleshooting
+
+### Uncaught Error: Undefined constant Bamarni\Composer\Bin\Command\BinCommand::SUCCESS
+
+This can occur if `composer-bin-plugin` is unable to resolve the path to binaries saved in the `php-tools/bin` folder. Adding `path/to/php-tools/` to your PATH environment variable before running `composer install` may fix this bug.
+
 ## Alternatives
 
 * Listing tools in "require-dev". This quickly leads to complex dependency conflicts (sometimes unsolvable)
