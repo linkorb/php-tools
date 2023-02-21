@@ -1,3 +1,5 @@
+> NOTE: Given the fact that this php-tools repo has identical goals to https://github.com/jakzal/phpqa, we've decided archive php-tools, and contribute to phpqa instead
+
 # php-tools
 
 A collection of tools to use in PHP-based projects for static analysis, unit/bdd testing, documentation, etc.
